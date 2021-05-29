@@ -1,0 +1,16 @@
+// Добавление пароля в GRUB2
+
+1. sudo grub-mkpasswd-pbkdf2
+2. вводим пароль
+3. копируем начиная с: grub.pbkdf2.sha512.100...
+4. sudo <редактор> /etc/grub.d/40_custom
+5. вписываем:
+	set superusers="root"
+	password_pbkdf2 root grub.pbkdf2.sha512.100...<и так свой хеш>
+6. Запрещаем чтение командой: 
+	sudo chmod 711 /etc/grub.d/40_custom
+7. Запускаем создание нового конфигурационного файла загрузчика
+	sudo grub-mkconfig -o /boot/grub/grub.cfg
+8. Перезагрузка и вуаля!
+
+PS: Во время запуска GRUB2 в поле "username" вписать root, далее свой пароль 
