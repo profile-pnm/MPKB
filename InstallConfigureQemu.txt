@@ -1,0 +1,16 @@
+// Qemu (установка и запуск на примере Arch Linux)
+
+1. $ sudo pacman -S qemu 
+2. qemu-img create -f qcow2 qemu_image 8G (создаем снимок контейнера, название qemu_image можно переименовать)
+3. qemu-system-x86_64 -smp 6 -m 4G -cdrom нашаоперационка.iso -boot order=d qemu_image (запускаем виртуалку в первый раз)
+4. genfstab -U /mnt >> /mnt/etc/fstab
+5. qemu-system-x86_64 -soundhw ac97 -k en-us -vga std -enable-kvm -m 4G  -usbdevice tablet -smp 6 -enable-kvm -boot c qemu_image (обычный запуск виртуалки после установки системы)
+6. Если запускаем без звука qemu-system-x86_64 -k en-us -vga std -enable-kvm -m4G  -usbdevice tablet -smp 6 -boot c qemu_image
+7. Опции:
+	-k en-us (раскладка)
+	-usbdevice tablet-cpu host-smp 6 # number of cores
+	-machine type=pc,accel=kvm-enable-kvm
+	-format=raw ??
+	-machine smm=off 
+	-soundhw sb16,es1370
+8. KVM – проверка:zgrep CONFIG_VIRTIO /proc/config.gzlsmod | grep kvm
