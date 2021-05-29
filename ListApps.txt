@@ -57,6 +57,7 @@
 
 - Эмулятор-терминала
  / lxterminal
+ / edex-ui #AUR
 
 - Шрифты
  / terminus-font
@@ -74,4 +75,6 @@
 - Видео
  / mpv
  
- 
+- Мессенджер
+ / telegram-desktop
+ / lightdcord-bin #AUR
