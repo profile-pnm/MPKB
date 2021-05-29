@@ -1,38 +1,77 @@
-base-devel
-geany
-yay (https://aur.archlinux.org/yay.git)
-librewolf
-krita
-fish
-flameshot
-feh
-vim
-git
-wget
-links
-i3-gaps
-lxappearance-gtk3
-lshw
-neofetch
-nitrogen
-pavucontrol
-picom
-ranger
-lxterminal
-rofi
-terminus-font
-thunar
-ttf-hack
-unzip
-viewnior
-mpv
-cmus
+- Редакторы текста
+ / geany
+ / vim
+ / leafpad
 
+- Компиляторы и прочее
+ / base-devel
+ 
+- IDE`шки
+ / monodevelop-bin #AUR
+ 
+- Браузер
+ / librewolf #Artix [universe] или AUR
 
+- Командная оболочка
+ / fish
 
+- Захват кадра 
+ / flameshot
 
+- Фото
+ / feh (также можно использовать для установки обоев)
+ / viewnior
 
+- Установщик обоев
+ / nitrogen
+ 
+- Пакетный менеджер
+ / yay (ссылка на git: https://aur.archlinux.org/yay.git)
+ 
+- Графический редактор
+ / krita
 
+- Администратор
+ / git
+ / wget
+ / links
+ / neofetch
+ / lshw
 
+- Файловый менеджер
+ / ranger
+ / thunar
+ 
+- Настройка графики (тема, иконки и прочее)
+ / lxappearance-gtk3
+ 
+- Замена i3wm
+ / i3-gaps
+ / dwm
 
+- Настройка звука
+ / pavucontrol
+ 
+- Композитный менеджер
+ / picom
 
+- Эмулятор-терминала
+ / lxterminal
+
+- Шрифты
+ / terminus-font
+ / ttf-hack
+
+- Лаунчер приложений
+ / rofi
+
+- Архиваторы
+ / unzip
+
+- Аудио
+ / cmus
+
+- Видео
+ / mpv
+ 
+ 
