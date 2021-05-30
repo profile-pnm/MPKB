@@ -1,10 +1,14 @@
+#Список программ (к примеру на Arch Linux)
+
 - Редакторы текста
  / geany
  / vim
  / leafpad
+ / zim
 
 - Компиляторы и прочее
  / base-devel
+ / mono-msbuild
  
 - IDE`шки
  / monodevelop-bin #AUR
@@ -30,6 +34,9 @@
  
 - Графический редактор
  / krita
+ 
+- Просмотрщик файлов
+ / evince
 
 - Администратор
  / git
