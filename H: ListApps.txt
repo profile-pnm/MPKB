@@ -7,7 +7,9 @@
  / zim
 
 - Компиляторы и прочее
- / base-devel
+ / gcc
+ /automake
+ /autoconf
  / mono-msbuild
  
 - IDE`шки
@@ -44,6 +46,7 @@
  / links
  / neofetch
  / lshw
+ / dnsutils 
 
 - Файловый менеджер
  / ranger
@@ -84,4 +87,4 @@
  
 - Мессенджер
  / telegram-desktop
- / lightdcord-bin #AUR
+ / lightcord-bin #AUR
