@@ -13,7 +13,10 @@
  / autoconf
  / mono-msbuild
  / sane-airscan
+ 
+ - Печать
  / cups
+ / gscan2pdf 
  
 - IDE`шки
  / monodevelop-bin #AUR
