@@ -1,12 +1,12 @@
 // Установка и настройка принтера Samsung SCX-3405 | система инициал. runit
 
-1. Переходим на сайт и скачиваем драйвер 
-https://support.hp.com/ru-ru/drivers/selfservice/samsung-scx-3405-laser-multifunction-printer-series/17157049
+1. Переходим на сайт и скачиваем драйвер:
+	https://support.hp.com/ru-ru/drivers/selfservice/samsung-scx-3405-laser-multifunction-printer-series/17157049
 2. Распаковываем архив и переходим в созданный каталог
 3. Берем и устанавливаем из репа пакеты: cups , cups-runit , sane-airscan 
 4. Выполняем запуск установщиков от имени админа: ./install-printer.sh и ./install-scanner.sh
 5. Прописываем команду от имени админа для добавления сервиса cups в систему иниц. runit:
-ln -s /etc/runit/sv/cupsd/ /run/runit/service/
+	ln -s /etc/runit/sv/cupsd/ /run/runit/service/
 6. Переходим в браузере по адресу: http://localhost:631
 7. Делаем следующие действия: "Administration" -> "Add Printer" -> "Выбираем нужный принтер" и далее, далее, далее. 
 8. Готово!
