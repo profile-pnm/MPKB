@@ -12,6 +12,7 @@
  / automake
  / autoconf
  / mono-msbuild
+ / python-pip
  
  - Печать / Скан
  / cups
