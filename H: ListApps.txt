@@ -12,11 +12,12 @@
  / automake
  / autoconf
  / mono-msbuild
- / sane-airscan
  
- - Печать
+ - Печать / Скан
  / cups
  / simple-scan 
+ / sane-airscan
+ / cups-runit
  
 - IDE`шки
  / monodevelop-bin #AUR
