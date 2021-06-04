@@ -5,12 +5,15 @@
  / vim
  / leafpad
  / zim
+ / micro
 
 - Компиляторы и прочее
  / gcc
- /automake
- /autoconf
+ / automake
+ / autoconf
  / mono-msbuild
+ / sane-airscan
+ / cups
  
 - IDE`шки
  / monodevelop-bin #AUR
@@ -47,6 +50,7 @@
  / neofetch
  / lshw
  / dnsutils 
+ / rsm (Runit system)
 
 - Файловый менеджер
  / ranger
