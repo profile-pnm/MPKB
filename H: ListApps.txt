@@ -16,7 +16,7 @@
  
  - Печать
  / cups
- / gscan2pdf 
+ / simple-scan 
  
 - IDE`шки
  / monodevelop-bin #AUR
