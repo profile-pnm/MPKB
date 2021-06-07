@@ -5,16 +5,16 @@
 3. swapon /dev/sdaN (форматирование в раздел подкачки)
 4. mkfs.ext4 /dev/sdaN(форматирование коренного раздела в файловую систему «ext4»)
 5. mount /dev/sdaN /mnt/(монтирование коренного раздела в каталог«/mnt»)
-6. pacstrap /mnt base base-devel linux linux-firmware vim(запуск скрипта для установки всех нужных пакетов-инструментов Arch-а ядро, прошивки известных устройств)
+6. pacstrap /mnt base base-devel linux linux-firmware vim(запуск скрипта для установки всех нужных пакетов-		инструментов Arch-а ядро, прошивки известных устройств)
 7. genfstab -U /mnt >> /mnt/etc/fstab(генерируем «fstab»)
 
 	== Работа в системе ==
 1. arch-chroot /mnt(вход в саму систему, в корень)
-2. #vim /etc/locale.gen (расскоментировать строку необходимые строки)
-3. #locale-gen(обновить локаль)
-4. #vim /etc/locale.conf (в созданный файл записать: LANG=ru_RU.UTF-8) 4 и 5 пункт не обязательно выполнять – можно и в английской локалиостаться. Я так больше предпочитаю. 
-5. #/etc/vconsole.conf(записать FONT=cyr-sun16KEYMAP=ruwin_alt_sh-UTF-8)
-6. #pacman -S grub nano networkmanager(устанавливаем загрузчик, редактор и псевдо-графический сетевой менеджер)
+2. # vim /etc/locale.gen (расскоментировать строку необходимые строки)
+3. # locale-gen(обновить локаль)
+4. # vim /etc/locale.conf (в созданный файл записать: LANG=ru_RU.UTF-8) 4 и 5 пункт не обязательно выполнять – можно и в английской локалиостаться. Я так больше предпочитаю. 
+5. # /etc/vconsole.conf(записать FONT=cyr-sun16KEYMAP=ruwin_alt_sh-UTF-8)
+6. # pacman -S grub nano networkmanager(устанавливаем загрузчик, редактор и псевдо-графический сетевой менеджер)
 7. # grub-install /dev/sdа(установка самого загрузчикана носитель )
 8. # grub-mkconfig -o /boot/grub/grub.cfg(автоматическая конфигурация загрузчика)
 9. # passwd root(установка пароля на суперпользователя)
