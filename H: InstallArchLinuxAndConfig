@@ -13,7 +13,8 @@
 2. # vim /etc/locale.gen (расскоментировать строку необходимые строки)
 3. # locale-gen(обновить локаль)
 4. # vim /etc/locale.conf (в созданный файл записать: LANG=ru_RU.UTF-8) 4 и 5 пункт не обязательно выполнять – можно и в английской локалиостаться. Я так больше предпочитаю. 
-5. # /etc/vconsole.conf(записать FONT=cyr-sun16KEYMAP=ruwin_alt_sh-UTF-8)
+5. # /etc/vconsole.conf(записать FONT=cyr-sun16
+								 KEYMAP=ruwin_alt_sh-UTF-8)
 6. # pacman -S grub nano networkmanager(устанавливаем загрузчик, редактор и псевдо-графический сетевой менеджер)
 7. # grub-install /dev/sdа(установка самого загрузчикана носитель )
 8. # grub-mkconfig -o /boot/grub/grub.cfg(автоматическая конфигурация загрузчика)
