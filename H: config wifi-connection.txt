@@ -34,3 +34,27 @@ update_config=1
 > enable_network 0
 > save_config
 > quit
+
+// Конфигурация wifi с помощью connman
+1. Проверим не заблокировано ли питание беспроводной карты ядром:
+# rfkill list
+
+2. В случае если заблокирована, то введем след. команду:
+# rfkill unblock wifi или all
+
+3. Посмотрим запущен установлено ли "up" на нашем интерфейсе:
+# ip link show wlp1s0
+
+4. Если нету, тогда пропишем команду:
+# ip link set wlp1s0 up
+
+5. Настриваем подлючение:
+# connmanctl
+> scan wifi
+> services
+> agent on
+> connect wifi_18....
+> вводим пароль
+> quit
+
+6. Проверяем подключение
