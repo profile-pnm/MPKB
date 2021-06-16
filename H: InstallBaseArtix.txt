@@ -1,0 +1,79 @@
+// Установка дитрибутива Artix (base) - UEFI
+
+1. Делаем разметку:
+/dev/sdX1 EFI Linux '512M'
+/dev/sdX2 Linux Swap '8G'
+/dev/sdX3 root 'все оставшееся место'
+
+2. Форматирование разделов 
+# mkfs.ext4 -L ROOT /dev/sdX3        
+# mkfs.fat -F 32 /dev/sdX1
+# fatlabel /dev/sdX2 BOOT
+# mkswap -L SWAP /dev/sdX2           
+
+3. Монтирование разделов
+# swapon /dev/disk/by-label/SWAP            
+# mount /dev/disk/by-label/ROOT /mnt
+# mkdir /mnt/boot
+# mount /dev/disk/by-label/BOOT /mnt/boot    
+
+4. Подключение к wifi
+# rfkill unblock wifi
+<убедиться в том, что подключены сервисы dhcpcd и wpa_supplicant>
+# nano /etc/wpa_supplicant/wpa_supplicant.conf
+	------------------------------------------
+    ctrl_interface=/run/wpa_supplicant или /run/runit/wpa_supplicant
+	update_config=1
+# wpa_supplicant -B -i interface -c /etc/wpa_supplicant/wpa_supplicant.conf 
+# wpa_cli
+> scan
+> scan_results
+> add_network
+> set_network 0 ssid "MYSSID"
+> set_network 0 psk "passphrase" 
+	* если пароль не стоит: 
+	> set_network 0 key_mgmt NONE
+> enable_network 0
+> save_config
+> quit
+
+5. Проверить на ping 
+
+6. Установка основной системы и некоторых компонентов
+#  basestrap /mnt base base-devel runit elogind-runit linux linux-firmware
+
+7. Генерация fstab
+# fstabgen -U /mnt >> /mnt/etc/fstab        
+
+8. Переходим в нашу готовую систему:
+# artix-chroot /mnt
+
+9. Установка GRUB
+# pacman -S grub efibootmgr
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub 
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+10. Настройка пользователей
+# passwd
+# useradd -m user
+# passwd user
+
+11. Имя хоста
+# vim /etc/hostname
+	  -------------	
+ 	  myhostname
+
+# nano /etc/hosts
+	   ----------
+ 		127.0.0.1        localhost
+ 		::1              localhost
+ 		127.0.1.1        myhostname.localdomain  myhostname
+
+12. Скачать программы для настройки сети
+# pacman -S dhcpcd or dhclient wpa_supplicant connman-runit
+# ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
+
+13. Перезагрузка системы
+# exit 
+# umount -R /mnt
+# reboot
