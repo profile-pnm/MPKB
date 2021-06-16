@@ -1,4 +1,4 @@
-// Конфигурация wifi с помощью wpa_supplicant
+// Конфигурация wifi с помощью wpa_supplicant (система иниц. Runit)
 
 1. Проверим не заблокировано ли питание беспроводной карты ядром:
 # rfkill list
@@ -12,10 +12,18 @@
 4. Если нету, тогда пропишем команду:
 # ip link set wlan0 up
 
-5. Скопируем конфиг в нужное место: 
-# cp /usr/share/doc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
+6. Стоит убедиться в том, что подлючены сервисы:
+- wpa_supplicant
+- dhcpcd
 
-6. Запускаем wpa_cli и прописываем следующее:
+5. Создаем конфигурационый файл > /etc/wpa_supplicant/wpa_supplicant.conf и в нем пишем:
+ctrl_interface=/run/wpa_supplicant или /run/runit/wpa_supplicant
+update_config=1
+
+6. Прописыаем команду:
+# wpa_supplicant -B -i interface -c /etc/wpa_supplicant/wpa_supplicant.conf 
+
+8. Запускаем wpa_cli и прописываем следующее:
 > scan
 > scan_results
 > add_network
