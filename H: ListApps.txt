@@ -57,6 +57,7 @@
  / patch
  / pacman-contrib
  / artix-archlinux-support
+ / hdparm
 
 - Файловый менеджер
  / ranger
