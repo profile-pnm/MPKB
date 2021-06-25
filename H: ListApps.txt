@@ -1,9 +1,8 @@
-#Список программ (к примеру на Arch Linux)
+#Список программ (к примеру на Artix Linux)
 
 - Редакторы текста
  / geany
  / vim
- / leafpad
  / zim
  / micro
 
@@ -17,7 +16,6 @@
  - Печать / Скан
  / cups
  / simple-scan 
- / sane-airscan
  / cups-runit
  
 - IDE`шки
@@ -36,16 +34,13 @@
  / feh (также можно использовать для установки обоев)
  / viewnior
 
-- Установщик обоев
- / nitrogen
- 
 - Пакетный менеджер
  / yay (ссылка на git: https://aur.archlinux.org/yay.git)
  
 - Графический редактор
  / krita
  
-- Просмотрщик файлов
+- Просмотрщик PDF and Post-Script
  / evince
 
 - Администратор
@@ -53,9 +48,15 @@
  / wget
  / links
  / neofetch
- / lshw
- / dnsutils 
+ / lshw (Arch Repository - Community)
+ / bind
  / rsm (Runit system)
+ / dhcpcd or dhclient
+ / connman-runit
+ / connman-gtk
+ / patch
+ / pacman-contrib
+ / artix-archlinux-support
 
 - Файловый менеджер
  / ranger
@@ -64,9 +65,9 @@
 - Настройка графики (тема, иконки и прочее)
  / lxappearance-gtk3
  
-- Замена i3wm
+- Для i3wm
  / i3-gaps
- / dwm
+ / i3blocks
 
 - Настройка звука
  / pavucontrol
@@ -75,12 +76,19 @@
  / picom
 
 - Эмулятор-терминала
- / lxterminal
+ / alacritty
  / edex-ui #AUR
 
 - Шрифты
  / terminus-font
  / ttf-hack
+ / ttf-font-awesome
+ / arc-icon-theme
+ / awesome-terminal-fonts
+ / papirus-icon-theme
+ 
+- Темы
+ / materia-gtk-theme
 
 - Лаунчер приложений
  / rofi
@@ -97,3 +105,9 @@
 - Мессенджер
  / telegram-desktop
  / lightcord-bin #AUR
+ 
+- Дрова
+ / xf86-video-ati
+ / xf86-video-vesa
+ / xf86-video-nouveau
+ / xf86-video-amdgpu
