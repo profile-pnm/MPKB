@@ -1,4 +1,4 @@
-// Установка дитрибутива Artix (base) - UEFI
+// Установка дитрибутива Artix (base) - UEFI 
 
 1. Делаем разметку:
 /dev/sdX1 EFI Linux '512M'
@@ -19,7 +19,7 @@
 
 4. Подключение к wifi
 # rfkill unblock wifi
-<убедиться в том, что подключены сервисы dhcpcd и wpa_supplicant>
+<убедиться в том, что подключены сервисы dhcpcd и wpa_supplicant или connman-runit>
 # nano /etc/wpa_supplicant/wpa_supplicant.conf
 	------------------------------------------
     ctrl_interface=/run/wpa_supplicant или /run/runit/wpa_supplicant
@@ -35,6 +35,14 @@
 	> set_network 0 key_mgmt NONE
 > enable_network 0
 > save_config
+> quit
+
+<можно с помощью connmanctl>
+# connmanctl
+> scan wifi
+> agent on
+> service's
+> connect ...
 > quit
 
 5. Проверить на ping 
@@ -69,7 +77,7 @@
  		::1              localhost
  		127.0.1.1        myhostname.localdomain  myhostname
 
-12. Скачать программы для настройки сети
+12. Скачать программы для настройки сети и запустить сервис
 # pacman -S dhcpcd or dhclient wpa_supplicant connman-runit
 # ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
 
