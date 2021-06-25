@@ -35,7 +35,7 @@ update_config=1
 > save_config
 > quit
 
-// Конфигурация wifi с помощью connman
+// Конфигурация wifi с помощью connmanctl
 1. Проверим не заблокировано ли питание беспроводной карты ядром:
 # rfkill list
 
