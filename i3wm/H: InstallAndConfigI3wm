@@ -21,7 +21,7 @@
 set $mod Mod4
 
 # polybar #
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Wallapers
 exec --no-startup-id feh --bg-fill ~/Pictures/minimalizm.jpg
@@ -87,7 +87,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 	## Autostart apps ##
-	exec --no-startup-id sleep 2 && alacritty 
+	exec --no-startup-id sleep 2 && i3-msg alacritty 
 	exec --no-startup-id sleep 4 && i3-msg 'workspace 2; exec librewolf; workspace 1'
 	exec --no-startup-id flameshot 
 
