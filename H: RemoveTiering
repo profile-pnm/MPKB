@@ -1,0 +1,35 @@
+// Убираем тиринг для ATI Radeon
+
+1. Скачиваем драйвер для xorg:
+	xf86-video-ati
+
+2. Создаем файл "20-radeon.conf" в директории:
+	/etc/X11/xorg.conf.d/..
+
+3. Вписываем следующее:
+
+Section "Device"
+	Identifier "Radeon"
+	Driver "radeon"
+	Option "TearFree" "on"
+EndSection
+
+
+// Убираем тиринг для Nvidia
+
+1. Скачиваем драйвер для xorg:
+	xf86-video-nouveau
+
+2. Создаем файл "20-nvidia.conf" в директории:
+	/etc/X11/xorg.conf.d/..
+
+3. Вписываем следующее:
+
+Section "Device"
+	Identifier "Nvidia Card"
+	Driver "nouveau"
+	VendorName "NVIDIA Corporation"
+	Option "NoLogo" "true"
+	Option "metamodes" "nvidia-auto-select +0+0 {ForceCompositionPipeline = On }"
+EndSection
+
