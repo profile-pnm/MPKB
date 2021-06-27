@@ -51,13 +51,14 @@
  / lshw (Arch Repository - Community)
  / bind
  / rsm (Runit system)
- / dhcpcd or dhclient
+ / dhcpcd || dhclient
  / connman-runit
  / connman-gtk
  / patch
  / pacman-contrib
  / artix-archlinux-support
  / hdparm
+ / android-tools && android-udev
 
 - Файловый менеджер
  / ranger
