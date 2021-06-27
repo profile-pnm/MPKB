@@ -12,6 +12,7 @@
  / autoconf
  / mono-msbuild
  / python-pip
+ / linux-headers
  
  - Печать / Скан
  / cups
