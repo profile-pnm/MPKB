@@ -1,0 +1,16 @@
+// Настройка автомонтирования flash-устройств
+
+1. Создаем файл "10-automount.rules" в директории /etc/udev/rules.d/..
+2. Вносим в него следующее:
+	SUBSYSTEM=="block", KERNEL=="sd[c-z][0-9]", ACTION=="add", RUN+="/bin/mkdir -p /mnt/flash-%k"
+	SUBSYSTEM=="block", KERNEL=="sd[c-z][0-9]", ACTION=="add", RUN+="/bin/mount -O uid=1000 /dev/%k /mnt/flash-%k"
+	SUBSYSTEM=="block", KERNEL=="sd[c-z][0-9]", ACTION=="remove", RUN+="/bin/umount /mnt/flash-%k"
+	SUBSYSTEM=="block", KERNEL=="sd[c-z][0-9]", ACTION=="remove", RUN+="/bin/rm -r /mnt/flash-%k"
+
+3. Сообщаем udev о добавлении новых правил:
+$ sudo udevadm control --reload-rules
+
+===========================================
+Чтобы промониторить, что видит система при 
+подключении или отключении устройств:
+$ udevadm monitor --property --kernel --udev
