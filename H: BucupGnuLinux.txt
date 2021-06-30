@@ -36,15 +36,15 @@ tar -cvzpf /mnt/flash/backupDDMMYY.tgz --exclude=/mnt/root/var/cache /mnt/root
 
 2:1. ЭТАП РАСПАКОВКИ АРХИВА В СВЕЖУЮ :
 << Монтируем отформатированный раздел >>
-# mount /dev/корень /mnt
+# mount /dev/корень /mnt/
 
 << Монтируем флешку >>
-# mkdir /mnt/flash
-# mount -o rw /dev/флешка /mnt/flash 
+# mkdir /media/flash
+# mount -o rw /dev/флешка /media/flash 
 
 
 << Распаковывам архив с бэкапом с носителя >>
-# tar --same-owner -xvpf /lib/live/mount/medium/backupYYYYMMDD.tgz -C /mnt/
+# tar --same-owner -xvpf /media/flash/backupDDMMYY.tgz -C /mnt/
 // параметр --same-owner сохраняет инфу о владельцах у распаковываемых файлов,
 p - сохраняет права доступа, f - указывает файл, который распаковываем
 
