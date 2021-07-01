@@ -59,7 +59,9 @@
  / pacman-contrib
  / artix-archlinux-support
  / hdparm
- / android-tools && android-udev && adbfs-rootless-git
+ / android-tools 
+ / pm-utils #AUR
+ 
 
 - Файловый менеджер
  / ranger
