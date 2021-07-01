@@ -9,10 +9,10 @@
 # mkfs.ext4 -L ROOT /dev/sdX3        
 # mkfs.fat -F 32 /dev/sdX1
 # fatlabel /dev/sdX2 BOOT
-# mkswap -L SWAP /dev/sdX2           
+# mkswap -L SWAP /dev/sdX2 // если потребуется
 
 3. Монтирование разделов
-# swapon /dev/disk/by-label/SWAP            
+# swapon /dev/disk/by-label/SWAP (если не было указано в разметке)         
 # mount /dev/disk/by-label/ROOT /mnt
 # mkdir /mnt/boot
 # mount /dev/disk/by-label/BOOT /mnt/boot    
