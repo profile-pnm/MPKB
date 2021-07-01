@@ -104,10 +104,10 @@ $ sudo mkdir /mnt/флешка/названиеКаталогаБэкапа
 # cd /
 
 << Начнем пробное резервное копирование >>
-# rsync -aAX --info=progress2 --one-file-system --delete --dry-run --exclude={/dev/*,/sys/*,/proc/*,/tmp/*,/run/*,/lost+found,/var/lib/dhcpcd/*} / /mnt/флешка/названиеКаталогаБэкапа
+# rsync -aAXv --delete --dry-run --exclude={"/dev/*","/sys/*","/proc/*","/tmp/*,"/run/*","/lost+found","/var/lib/dhcpcd/*","/mnt/*"} / /mnt/флешка/названиеКаталогаБэкапа
 
 << Если ошибок нет, то делаем реальный бэкап, только без ключа --dry-run >>
-# rsync -aAX --info=progress2 --one-file-system --delete --exclude={/dev/*,/sys/*,/proc/*,/tmp/*,/run/*,/lost+found,/var/lib/dhcpcd/*} / /mnt/флешка/названиеКаталогаБэкапа
+# rsync -aAXv --delete --exclude={"/dev/*","/sys/*","/proc/*","/tmp/*,"/run/*","/lost+found","/var/lib/dhcpcd/*","/mnt/*"} / /mnt/флешка/названиеКаталогаБэкапа
 
 =================================================
 2. Восстановление бэкапа в Live-USB / Live-CD
@@ -124,7 +124,7 @@ $ sudo mkdir /mnt/флешка/названиеКаталогаБэкапа
 
 << После успешного восстановление отмнотируем диск и флешку >>
 # umount /dev/раздел_коренного_диска /mnt/system
-# umlunt /dev/флешка /mnt/usb
+# umount /dev/флешка /mnt/usb
 
 << Перезагружаем систему >>
 # reboot
