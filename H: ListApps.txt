@@ -4,7 +4,6 @@
  / geany
  / vim
  / zim
- / micro
 
 - Компиляторы и прочее
  / gcc
@@ -26,14 +25,15 @@
  / librewolf #Artix [universe] или AUR
 
 - Командная оболочка
- / fish
+ / zsh
+ / zsh-completions
 
 - Захват кадра 
  / flameshot
 
 - Фото
  / feh (также можно использовать для установки обоев)
- / viewnior
+ / viewnior (юзается для кадрирования фото и если надо для просмотра)
 
 - Пакетный менеджер
  / yay (ссылка на git: https://aur.archlinux.org/yay.git)
@@ -50,29 +50,31 @@
  / links
  / neofetch
  / lshw (Arch Repository - Community)
- / bind
+ / bind 
  / rsm (Runit system)
- / dhcpcd || dhclient
+ / dhcpcd 
  / connman-runit
- / connman-gtk
  / patch
  / pacman-contrib
  / artix-archlinux-support
- / hdparm
+ / hdparm (можно юзать для проверки скорости записи / чтения диска)
  / android-tools 
  / pm-utils #AUR
+ / tree
  
 
-- Файловый менеджер
+- Файловый менеджер / система
  / ranger
- / thunar
+ / nemo
+ / ntfs-3g
  
 - Настройка графики (тема, иконки и прочее)
  / lxappearance-gtk3
  
-- Для i3wm
+- Графическое окружение
  / i3-gaps
  / i3blocks
+ / cinnamon
 
 - Настройка звука
  / pavucontrol
@@ -88,7 +90,6 @@
  / terminus-font
  / ttf-hack
  / ttf-font-awesome
- / arc-icon-theme
  / awesome-terminal-fonts
  / papirus-icon-theme
  
@@ -96,7 +97,8 @@
  / materia-gtk-theme
 
 - Лаунчер приложений
- / rofi
+ / rofi (для i3wm)
+ / synapse (для cinnamon)
 
 - Архиваторы
  / unzip
@@ -107,12 +109,14 @@
 - Видео
  / mpv
  
-- Мессенджер
+- Мессенджер && видео\аудио
  / telegram-desktop
  / lightcord-bin #AUR
  
 - Дрова
- / xf86-video-ati
- / xf86-video-vesa
- / xf86-video-nouveau
- / xf86-video-amdgpu
+ / Для Xorg:
+	 	   / xf86-video-ati
+ 	 	   / xf86-video-vesa
+ 		   / xf86-video-nouveau
+ 	 	   / xf86-video-amdgpu
+ / nvidia
