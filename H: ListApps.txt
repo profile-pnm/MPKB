@@ -61,6 +61,8 @@
  / android-tools 
  / pm-utils #AUR
  / tree
+ / syslog-ng-runit
+ / syslog-ng
  
 
 - Файловый менеджер / система
