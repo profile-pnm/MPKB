@@ -20,24 +20,7 @@
 4. Подключение к wifi
 # rfkill unblock wifi
 <убедиться в том, что подключены сервисы dhcpcd и wpa_supplicant или connman-runit>
-# nano /etc/wpa_supplicant/wpa_supplicant.conf
-	------------------------------------------
-    ctrl_interface=/run/wpa_supplicant или /run/runit/wpa_supplicant
-	update_config=1
-# wpa_supplicant -B -i interface -c /etc/wpa_supplicant/wpa_supplicant.conf 
-# wpa_cli
-> scan
-> scan_results
-> add_network
-> set_network 0 ssid "MYSSID"
-> set_network 0 psk "passphrase" 
-	* если пароль не стоит: 
-	> set_network 0 key_mgmt NONE
-> enable_network 0
-> save_config
-> quit
-
-<можно с помощью connmanctl>
+<произвести подключение можно с помощью connmanctl>
 # connmanctl
 > scan wifi
 > agent on
@@ -48,7 +31,7 @@
 5. Проверить на ping 
 
 6. Установка основной системы и некоторых компонентов
-#  basestrap /mnt base base-devel runit elogind-runit linux linux-firmware
+#  basestrap /mnt base base-devel runit elogind-runit linux linux-firmware vim
 
 7. Генерация fstab
 # fstabgen -U /mnt >> /mnt/etc/fstab        
@@ -73,7 +56,7 @@
 
 # nano /etc/hosts
 	   ----------
- 		127.0.0.1        localhost
+ 		127.0.1.1        localhost
  		::1              localhost
  		127.0.1.1        myhostname.localdomain  myhostname
 
@@ -81,7 +64,16 @@
 # pacman -S dhcpcd or dhclient wpa_supplicant connman-runit
 # ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
 
-13. Перезагрузка системы
+13. Дата и локаль
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+# hwclock --systohc
+# vim /etc/locale.gen
+# locale-gen
+# vim /etc/locale.conf
+		--------------
+    	LANG="en_US.UTF-8"    
+
+14. Перезагрузка системы
 # exit 
 # umount -R /mnt
 # reboot
