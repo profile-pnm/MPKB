@@ -76,7 +76,16 @@ GRUB_DISABLE_OS_PROBER=false
 # pacman -S dhcpcd or dhclient wpa_supplicant connman-runit
 # ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
 
-13. Перезагрузка системы
+13. Дата и локаль
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+# hwclock --systohc
+# vim /etc/locale.gen
+# locale-gen
+# vim /etc/locale.conf
+		--------------
+    	LANG="en_US.UTF-8"  
+
+14. Перезагрузка системы
 # exit 
 # umount -R /mnt
 # reboot
