@@ -1,0 +1,22 @@
+Установка командной оболочки zsh:
+
+1. Надо два пакета "zsh" и "zsh-completitions"
+2. Посмотрим какие оболочки присутствуют в системе:
+	$ chsh -l
+3. Делаем оболочку постоянной для пользователя:
+	$ sudo chsh -s zsh username 
+4. Запускаем zsh и проходим первоначальную настройку
+5. Воспользуемся фреймворком oh_my_zsh:
+	$ sh -c "${wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh}"
+    <для обновления его>
+    $ upgrade oh_my_zsh
+6. Изменение темы и плагинов вносим в новый конфиг: ~/.zshrc
+7. Пару используемых плагинов:
+* zsh-syntax-highlighting (link: https://github.com/zsh-users/zsh-syntax-highlighting.git)
+* zsh-autosuggestions (link: https://github.com/zsh-users/zsh-autosuggestions.git)
+	<весь каталог вносим в директорию: ~/.oh_my_zsh/custom/plugins/..>
+    
+8. Обновление конфига .zshrc происходит по команде: source путь/.zshrc
+
+ 
+    
