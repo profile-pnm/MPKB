@@ -12,6 +12,8 @@
  / python-pip
  / linux-headers
  / amd-ucode
+ / polkit
+ / polit-gnome
  
  - Печать / Скан
  / cups
