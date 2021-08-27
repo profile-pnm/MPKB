@@ -3,7 +3,6 @@
 - Редакторы текста
  / geany
  / vim
- / zim
 
 - Компиляторы и прочее
  / gcc
@@ -12,6 +11,7 @@
  / mono-msbuild
  / python-pip
  / linux-headers
+ / amd-ucode
  
  - Печать / Скан
  / cups
@@ -74,9 +74,9 @@
  / lxappearance-gtk3
  
 - Графическое окружение
- / i3-gaps
- / i3blocks
  / cinnamon
+ / dwm
+ / dwmstatus
 
 - Настройка звука
  / pavucontrol
@@ -87,6 +87,7 @@
 - Эмулятор-терминала
  / alacritty
  / edex-ui #AUR
+ / st
 
 - Шрифты
  / terminus-font
