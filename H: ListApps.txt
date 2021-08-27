@@ -79,6 +79,7 @@
  / cinnamon
  / dwm
  / dwmstatus
+ / slock
 
 - Настройка звука
  / pavucontrol
