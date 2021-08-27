@@ -1,0 +1,43 @@
+Установка и настройка оконного менеджера DWM (Dynamic Window Manager)
+====================================================================
+
+1. Скачаем исходники DWM и еще некоторых программ:
+$ git clone git://git.suckless.org/dwm
+$ git clone git://git.suckless.org/dwmstatus
+$ git clone git://git.suckless.org/st
+$ git clone git://git.suckless.org/slock
+
+2. Компилируем содержимое c помощью команд:
+$ make
+$ make install 
+
+3. Создадим файл диспетчера .desktop:
+$ cd /usr/share/
+$ sudo mkdir xsessions
+$ cd xsessions && sudo vim dwm.desktop
+		------------------------------
+        [Desktop Entry]
+        Encoding = UTF-8
+        Name = Dwm
+        Comment = Dynamic Window Manager
+        Exec = dwm
+        Icon = dwm
+        Type = XSession
+        ------------------------------
+ 
+4. Создадим файл .xprofile в домашней директории:
+ 				---------------------------------
+                setxkbmap -option grp:alt_shift_toggle 'us, ru'
+                ...
+                ---------------------------------
+                
+5. Изменим конфиг эмулятора терминала "st":
+				--------------------------
+                Изменим шрифт на Terminus 
+                и увеличим его размер
+               
+6. Создадим файл запуска иксов в домашней директории:
+$ vim .xinitrc
+--------------
+exec dwm
+
