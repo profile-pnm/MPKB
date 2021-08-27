@@ -118,8 +118,10 @@
  
 - Дрова
  / Для Xorg:
+ 		   / xorg
 	 	   / xf86-video-ati
  	 	   / xf86-video-vesa
  		   / xf86-video-nouveau
  	 	   / xf86-video-amdgpu
  / nvidia
+ 
