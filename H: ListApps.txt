@@ -122,6 +122,7 @@
 - Дрова
  / Для Xorg:
  		   / xorg
+           / xorg-xinit
 	 	   / xf86-video-ati
  	 	   / xf86-video-vesa
  		   / xf86-video-nouveau
