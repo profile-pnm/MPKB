@@ -8,15 +8,19 @@
 
 
 ###         Сейчас в базе есть:
-                1. Установка "Arch Linux", "Artix"
+                1. Установка "ArchLinux", "Artix" (catalog: *InstallSystems*)
                 2. Установка и запуск "Qemu" (гипервизор)
                 3. Конфиги:
                     * принтер
-                4. Основной список нужных программ
-                5. Загрузочная флешка с помощью команды "dd" 
+                    * тачпад (catalog: *Graphical-Environment*)
+                4. Основной список нужных программ 
+                5. Загрузочная флешка с помощью команды "dd" (catalog: *FS-Disks*) 
                 6. Подключение к wifi-сети через wpa_supplicant или connmanctl
-                7. "Бэкап" и восставление системы GNU/Linux 
-                8. Автоматическое "монтирование" flash-устройств
+                7. "Бэкап" и восставление системы GNU/Linux (catalog: *FS-Disks*)
+                8. Автоматическое "монтирование" flash-устройств (catalog: *FS-Disks*)
+                9. Удаление тиринга для видеокарт AMD и NVIDIA (catalog: *Graphical-Environment*)
+                10. Установка командной оболочки "zsh" (catalog: *UnixShell*)
+                11. Установка пароля на GRUB2 (catalog: *Secutiry*)
 
                         
                         
