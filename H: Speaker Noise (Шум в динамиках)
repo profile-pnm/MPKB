@@ -1,0 +1,5 @@
+// Если у вас вдруг возникает треск или шум в динамиках, то вам следует выключить модуль "PowerSave"
+
+$ sudo tee /etc/modprobe.d/snd-hds.intel.conf <<< "options snd_hda-intel power_save=0"
+
+// А после перезапустить вашу ОС
