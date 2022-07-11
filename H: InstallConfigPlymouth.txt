@@ -1,0 +1,38 @@
+/** Установка и настройка программы plymouth под ArchCraft **/
+//Программа позволяет установить графический splash-screen во время запуска init
+//Дополнительный материал: https://www.youtube.com/watch?v=jpiHEAYCMtQ
+
+1) Скачать необходимые пакет:
+$ sudo pacman -S plymouth #репозиторий chaotic-aur
+
+2) Добавить hook и GPU модуль в mkinitcpio
+$ sudo vim /etc/mkinitcpio.conf
+--------------------------------------------------------------------
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+#Для граф. карт Intel - i915
+#Для граф. карт Nvidia - nvidia nvidia_modeset nvidia_uvm nvidia_drm
+#Для граф. карт AMD - amdgpu
+
+HOOKS=(base udev plymouth ...) #Добавить hook plymouth после base и udev
+
+3) Добавление нескольких параметров в GRUB
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet splash udev.log_priority=3 vt.global_cursor_default=1"
+
+4) Делаем initframs и регенерацию grub-config
+$ sudo mkinitcpio -P linux ; sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+5) Изменяем параметры в файле /etc/plymouth/plymouthd.conf на:
+---------------
+[Daemon]
+Theme=linuxtext #выбранная тема
+ShowDelay=0
+DeviceTimeout=5
+
+6) Скачиваем тему, которая была выбрана в конф. файле: https://www.gnome-look.org/s/Gnome/p/1806313
+
+7) Распаковываем тему в каталог: /usr/share/plymouth/theme/
+
+8) Устанавливаем тему:
+$ sudo plymouth-set-default-theme -R linuxtext
+
+9) Перезапускаем ОС
